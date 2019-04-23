@@ -1,4 +1,4 @@
-##### Public Transport Time Mapping
+# Public Transport Time Mapping
 ## Why?
 The rent in Zürich is very high and thus I was looking for a way to find places outside of Zürich which are still reachable in a timely matter from the city center.
 
