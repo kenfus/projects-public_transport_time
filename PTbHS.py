@@ -13,10 +13,13 @@ import gmaps.datasets
 import pandas as pd
 
 ##This programm asks you for a destination and arrival-time. Then it makes a square around it (20 by 20 km)
-##and puts the middle of a 250m*250m square as starting point into the
-##Public Transport API of Google and saves the travel time for each query to a list.
+##and puts the middle as starting point into the
+##Public Transport API of Google and saves the travel time from the starting point for each 250*250m^2 square to a list.
 ##After getting the data, it maps the time with help of the gmaps-library and colors the points by the traveltime.
-##I did this Programm to figure out places which are far away from Zürich (lower rent) but are still reachable in a passable time ##by train from the HB Zürich. With it's help, I found out about "Leimbach" and "Bachenbülach".
+##I did this Programm to figure out places which are far away from Zürich (lower rent) but are still reachable in a
+##passable time by train from the HB Zürich. With it's help, I found out about "Leimbach" and "Bachenbülach".
+##Why? To save rent and still be central.
+##With the help of the google API, you can just type in where you work (e.g.ETH Zürich Hauptgebäude)
 
 
 ##TODO: The mapping still looks awful. Also there should be a way to run it without Jupyter Notebook.
@@ -25,12 +28,11 @@ import pandas as pd
 
 
 
-api_key = 'AIzaSyDDRjczHB5nH28R7KLRVdepGpCa-fpdxcI' #INSERT YOUR GOOGLE API KEY HERE
+api_key = 'API KEY HERE' #INSERT YOUR GOOGLE API KEY HERE
 gmaps.configure(api_key=api_key)
 arrival_time = time.mktime(time.strptime(input('When do you have to be at work? 2015-10-20 22:24'), '%Y-%m-%d %H:%M'))
 arrival_time = int(arrival_time)
 print(arrival_time)
-#arrival_time = 1543216500
 time = list()
 lng = list()
 lat = list()
